@@ -75,7 +75,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--bg-button-primary)',
+        // Use rgb and <alpha-value> to support opacity
+        primary: 'rgb(var(--bg-button-primary) / <alpha-value>)',
         black: 'var(--color-black)',
         indigo: 'var(--color-indigo)',
       },
