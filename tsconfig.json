@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es2017", // or another target depending on your requirements
+    "declaration": true, // to generate .d.ts files
+    "esModuleInterop": true,
+    "strict": false,
+    "allowJs": true,
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+  },
+  "include": ["src/**/*"]
+}
