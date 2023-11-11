@@ -1,6 +1,6 @@
 {
-  "name": "tailwindcss-theme-cutomizer",
-  "version": "1.0.2",
+  "name": "tailwindcss-theme-customizer",
+  "version": "1.0.3",
   "description": "Tailwindcss plugin to simplify theme creating process",
   "author": "Andrii Kryvoviaz",
   "license": "MIT",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrii-kryvoviaz/tailwindcss-theme-cutomizer.git"
+    "url": "git+https://github.com/andrii-kryvoviaz/tailwindcss-theme-customizer.git"
   },
   "keywords": [
     "tailwindcss"
   ],
   "bugs": {
-    "url": "https://github.com/andrii-kryvoviaz/tailwindcss-theme-cutomizer/issues"
+    "url": "https://github.com/andrii-kryvoviaz/tailwindcss-theme-customizer/issues"
   },
-  "homepage": "https://github.com/andrii-kryvoviaz/tailwindcss-theme-cutomizer#readme",
+  "homepage": "https://github.com/andrii-kryvoviaz/tailwindcss-theme-customizer#readme",
   "devDependencies": {
     "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2"
