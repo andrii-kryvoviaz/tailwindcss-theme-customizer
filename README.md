@@ -34,17 +34,15 @@ const defaultTheme: Theme = {
     bgButtonPrimary: {
       blue: 600,
     },
+    colorIndigo: 'indigo.500', // Define color as TailwindCSS color (supports type hints)
     colorBlack: '#000', // Define color as hex
-    colorIndigo: 'indigo.500', // Define color as TailwindCSS color
   },
 
   // Add custom variants here to override default variables
   // e.g. below will override bgButtonPrimary for dark mode
   variants: {
     dark: {
-      bgButtonPrimary: {
-        teal: 500,
-      },
+      bgButtonPrimary: 'teal.500'
     },
   },
 };
@@ -77,8 +75,8 @@ export default {
       colors: {
         // Use rgb and <alpha-value> to support opacity
         primary: 'rgb(var(--bg-button-primary) / <alpha-value>)',
-        black: 'var(--color-black)',
-        indigo: 'var(--color-indigo)',
+        black: 'rgb(var(--color-black))',
+        indigo: 'rgb(var(--color-indigo))',
       },
     },
   },
