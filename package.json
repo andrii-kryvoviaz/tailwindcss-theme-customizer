@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-theme-cutomizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailwindcss plugin to simplify theme creating process",
   "author": "Andrii Kryvoviaz",
   "license": "MIT",
