@@ -10,6 +10,8 @@ export type AllowedColorKeys = Exclude<
   ExcludedColorKeys
 >;
 
+export type AllowedColors = Omit<DefaultColors, ExcludedColorKeys>;
+
 export type ExclusiveThemeVariable = {
   [K in AllowedColorKeys]: Record<K, number> &
     Partial<Record<Exclude<AllowedColorKeys, K>, never>>;
@@ -24,9 +26,11 @@ export type ColorVariants<T> = {
     : Exclude<P, ExcludedColorKeys>;
 }[keyof T];
 
-export type DefaultColorNames = ColorVariants<DefaultColors>;
+export type DefaultColorNames = ColorVariants<AllowedColors>;
 
-export type ThemeVariables = Record<string, ExclusiveThemeVariable | DefaultColorNames>;
+export type HexColor = `#${string}`;
+
+export type ThemeVariables = Record<string, ExclusiveThemeVariable | DefaultColorNames | HexColor>;
 
 export type Theme = {
   variables: ThemeVariables;
