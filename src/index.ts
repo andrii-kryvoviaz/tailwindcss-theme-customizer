@@ -3,9 +3,11 @@ import { DefaultColors } from 'tailwindcss/types/generated/colors';
 
 import { Extractor } from './extractor';
 
+type ExcludedColorKeys = 'inherit' | 'current' | 'warmGray' | 'trueGray' | 'coolGray' | 'blueGray' | 'lightBlue';
+
 export type AllowedColorKeys = Exclude<
   keyof DefaultColors,
-  'inherit' | 'current' | 'transparent' | 'warmGray' | 'trueGray' | 'coolGray' | 'blueGray' | 'lightBlue'
+  ExcludedColorKeys
 >;
 
 export type ExclusiveThemeVariable = {
@@ -13,7 +15,18 @@ export type ExclusiveThemeVariable = {
     Partial<Record<Exclude<AllowedColorKeys, K>, never>>;
 }[AllowedColorKeys];
 
-export type ThemeVariables = Record<string, ExclusiveThemeVariable | string>;
+export type ColorVariants<T> = {
+  [P in keyof T]-?: T[P] extends Record<any, any>
+    ? 
+      {
+        [K in keyof T[P]]: `${string & P}.${string & K}`;
+      }[keyof T[P]]
+    : Exclude<P, ExcludedColorKeys>;
+}[keyof T];
+
+export type DefaultColorNames = ColorVariants<DefaultColors>;
+
+export type ThemeVariables = Record<string, ExclusiveThemeVariable | DefaultColorNames>;
 
 export type Theme = {
   variables: ThemeVariables;
